@@ -1,10 +1,12 @@
 const express = require('express');
 const http = require('http');
 const socetIo = require('socet.io');
+const UsersService = require('./UsersService');
 
 const app = express();
 const server = http.createServer(app);
 const io = socetIo(server);
+const usersService = new UsersService(); 
 
 app.use(express.static('${__dirname}/public'));
 
